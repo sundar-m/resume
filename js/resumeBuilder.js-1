@@ -1,0 +1,52 @@
+/*$("#main").append("sundar");
+var awesomethoughts="I am Sundar and I am Awesome !!";
+var funthoughts=awesomethoughts.replace("Awesome","Fun");
+var formattedName=HTMLheaderName.replace("%data%","Sundar");
+var formattedRole=HTMLheaderRole.replace("%data%","Developer")
+console.log(awesomethoughts);
+console.log(funthoughts);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+var skills=["JS","PHP","Java"];
+var bio ={
+	"name": "Meenakshi Sundar",
+	"role": "Developer",
+	"contacts":{
+		"mobile": "",
+		"email": "mnkshsundar1@gmail.com",
+		"location": "Bangalore"
+	},
+	"skills": skills
+};
+var work ={};
+work.position= "Software Engineer Intern";
+work.employer= "Homelane";
+work.years= 0.6;
+
+var education={};
+education["name"]="Coimbatore Institute Of Technology";
+education["years"]="2012-2015";
+education["city"]="Coimbatore, TN, IN";
+var education ={
+	"schools":[
+		{
+			"name": "Sri Ramakrishna Engineering College",
+			"city": "Coimbatore",
+			"degree": "B.Sc",
+			"major": "Computer Technology"
+		},
+		{
+			"name": "Coimbatore Institute Of Technology",
+			"city" :"Coimbatore",
+			"degree": "Masters",
+			"major": "Computer Application"
+		}
+	]
+}
+$("#main").append(bio.name);
+$("#main").append(bio.role);
+$("#main").append(bio.contacts.email);
+$("#main").append(bio.skills);
+$("#main").append(work["position"]);
+$("#main").append(education.name); */
+
