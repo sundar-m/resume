@@ -14,13 +14,13 @@ var projects={
 	"projects":[
 		{
 			"title":"Business Process Automation",
-			"dates":"Decemeber 2014 - May 2015",
+			"dates":"December 2014 - May 2015",
 			"description":"Created an web application which allows the company to quickly automate their tasks like creating quotation, reports and many more."
 		},	
 		{
 			"title":"A website for technical symposium",
-			"dates":"Decemeber 2013 - January 2014",
-			"description":"Created and maintained a website for my department's national level techmical symposium."
+			"dates":"December 2013 - January 2014",
+			"description":"Created and maintained a website for my College's national level technical symposium Cyberfest 2014."
 		}
 
 	]
@@ -28,13 +28,14 @@ var projects={
 
 var bio ={
 	"name": "Meenakshi Sundar",
-	"role": "Developer",
-	"welcomeMessage":"Welcome to my page",
+	"role": "Software Developer",
 	"contacts":{
 		"email": "mnkshsundar1@gmail.com",
-		"location": "Bangalore"
+		"github": "sundar-m",
+		"location": "Bangalore, Karnataka, India"
 	},
-	"skills": ["JS","PHP","Java"]
+	"welcomeMessage":"Welcome to my page",
+	"skills": ["JS","PHP","Java","Software Development"]
 }
 
 var education ={
@@ -58,6 +59,33 @@ var education ={
 	]
 }
 
+
+		var formattedName= HTMLheaderName.replace("%data%",bio.name);
+		var formattedRole= HTMLheaderRole.replace("%data%",bio.role);
+		var formattedEmail= HTMLemail.replace("%data%",bio.email);
+		var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		$("#header").prepend(formattedRole);
+		$("#header").prepend(formattedName);
+		$("#header").append(formattedMsg);
+	
+var formattedContactInfo = [];
+formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
+
+if(bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	for(i in bio.skills) {
+		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+	}
+}
+
+for(i in formattedContactInfo) {
+	$("#topContacts").append(formattedContactInfo[i]);
+	$("#footerContacts").append(formattedContactInfo[i]);
+}
+
 function displayWork(){
 
 	for(job in work.jobs){
@@ -79,19 +107,20 @@ function displayWork(){
 
 displayWork();
 
-projects.display=function(){
+function displayProjects(){
 	for (project in projects.projects){
 		$("#projects").append(HTMLprojectStart);
 
-		var formattedTitle=HTMLProjectTitle.replace("%data%",projects.projects[project].title);
+		var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[project].title);
 		$(".project-entry:last").append(formattedTitle);
 
 		var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
 		$(".project-entry:last").append(formattedDates);
 
-		var formattedDescription=HTMLprojectDecription.replace("%data%",projects.projects[project].description);
+		var formattedDescription=HTMLprojectDescription.replace("%data%",projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
 
 		
 	}
 }
+displayProjects();

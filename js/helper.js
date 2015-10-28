@@ -86,10 +86,10 @@ function initializeMap() {
 
   var mapOptions = {
     disableDefaultUI: true
-  };
+  }; 
 
   
-  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+  map = new google.maps.Map(document.querySelector('#map'), mapOptions); */
 
 
   
@@ -114,7 +114,7 @@ function initializeMap() {
   }
 
   
-  function createMapMarker(placeData) {
+ /* function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat();  // latitude from the place service
